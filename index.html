@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Stylé</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="cover-page" id="cover">
+        <h1 class="title">Bienvenue sur Sudoku Master</h1>
+        <div class="buttons">
+            <button onclick="startGame('easy')">Facile</button>
+            <button onclick="startGame('medium')">Moyen</button>
+            <button onclick="startGame('hard')">Difficile</button>
+        </div>
+    </div>
+
+    <div id="sudoku-page" style="display: none;">
+        <h1>Sudoku Stylé</h1>
+        <div id="timer">00:00</div>
+        <div id="best-time">Meilleur temps : --</div>
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="sudoku-container"></div>
+        <div class="buttons">
+            <button onclick="checkSolution()">Vérifier</button>
+            <button onclick="resetBoard()">Nouvelle Partie</button>
+            <button onclick="returnToMenu()">Retour</button>
+        </div>
+    </div>
+
+    <div id="confetti"></div>
+    <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-video-game-mystery-alert-234.wav"></audio>
+    <script src="script.js"></script>
+</body>
+</html>

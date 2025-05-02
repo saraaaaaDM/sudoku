@@ -1,0 +1,101 @@
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #74ebd5, #ACB6E5);
+    height: 100vh;
+    overflow: hidden;
+}
+.cover-page, #sudoku-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.title {
+    font-size: 3em;
+    margin-bottom: 1em;
+}
+.buttons button {
+    margin: 0.5em;
+    padding: 1em 2em;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+.buttons button:hover {
+    transform: scale(1.05);
+    background-color: #555;
+}
+#sudoku-container {
+    display: grid;
+    grid-template-columns: repeat(9, 40px);
+    grid-gap: 2px;
+    margin: 20px 0;
+}
+.cell {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2em;
+    text-align: center;
+}
+.prefilled {
+    background-color: #eee;
+}
+#progress-bar-container {
+    width: 80%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #4A90E2, #74ebd5);
+    transition: width 0.5s;
+}
+#timer, #best-time {
+    font-size: 1.5em;
+    margin: 10px 0;
+    color: #333;
+}
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+        transform: scale(1.2);
+    }
+}
+#confetti {
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+}
+.confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: red;
+    opacity: 0.8;
+    animation: confetti-fall 5s linear infinite;
+}
+@keyframes confetti-fall {
+    0% { transform: translateY(0) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
